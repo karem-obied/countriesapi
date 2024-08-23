@@ -2,7 +2,7 @@ import "../styles/style.css";
 import { FaStarAndCrescent } from "react-icons/fa";
 function Header() {
   function change() {
-    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
   }
 
   return (

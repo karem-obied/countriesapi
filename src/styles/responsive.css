@@ -1,0 +1,31 @@
+@media (max-width: 375px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 20px;
+  }
+  .searchBar {
+    width: 100% !important;
+  }
+  header {
+    font-size: 16px;
+  }
+
+  .card {
+    flex-basis: 100% !important;
+  }
+  .details,
+  .lists {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .lists {
+    gap: 30px;
+  }
+  .details img {
+    height: 100% !important;
+  }
+  .borders {
+    margin: 0 !important ;
+  }
+}

@@ -1,15 +1,22 @@
 import CountryPage from "../components/CountryPage";
-
+import { useState, useEffect } from "react";
+import "../styles/style.css";
+import { useLocation } from "react-router-dom";
 function Country() {
-  async function fetchCountry() {
-    const country = await fetch("https://restcountries.com/v3.1/all");
-    return country;
-  }
-
-  const country = fetchCountry();
-
+  const [country, setCountry] = useState([]);
+  const location = useLocation();
+  useEffect(() => {
+    if (country.length === 0) {
+      const search = location.pathname;
+      fetch(`https://restcountries.com/v3.1/alpha${search}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setCountry(data);
+        });
+    }
+  }, [country, location.pathname]);
   return (
-    <div>
+    <div className="CountryPage">
       <CountryPage country={country} />
     </div>
   );
